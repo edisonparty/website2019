@@ -25,3 +25,5 @@ echo "PACKING WEB PROJECT"
 dotnet pack ./web/web.csproj -c Release -o ./artifacts --version-suffix=$revision 
 
 echo "SCRIPT EXECUTION DONE"
+
+ls -la $artifactsfolder
