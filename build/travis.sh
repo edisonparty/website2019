@@ -5,15 +5,14 @@
 #
 set -e
 
-
 artifactsfolder="./artifacts"
 if [ -d $artifactsfolder ]; then
   rm -R $artifactsfolder
 fi
 
-dotnet restore
+dotnet restore web.sln
 
-dotnet build -c Release
+dotnet build web.sln -c Release
 
 revision=${TRAVIS_JOB_ID:=1}  
 revision=$(printf "%04d" $revision) 
