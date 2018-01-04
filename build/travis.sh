@@ -9,12 +9,19 @@ artifactsfolder="./artifacts"
 if [ -d $artifactsfolder ]; then
   rm -R $artifactsfolder
 fi
+echo "RESTORING PACKAGES FOR SOLUTION"
 
 dotnet restore web.sln
+
+echo "BUILDING SOLUTION"
 
 dotnet build web.sln -c Release
 
 revision=${TRAVIS_JOB_ID:=1}  
 revision=$(printf "%04d" $revision) 
 
+echo "PACKING WEB PROJECT"
+
 dotnet pack ./web/web.csproj -c Release -o ./artifacts --version-suffix=$revision 
+
+echo "SCRIPT EXECUTION DONE"
