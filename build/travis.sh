@@ -9,6 +9,8 @@ artifactsfolder="./artifacts"
 if [ -d $artifactsfolder ]; then
   rm -R $artifactsfolder
 fi
+mkdir $artifactsfolder
+
 echo "RESTORING PACKAGES FOR SOLUTION"
 
 dotnet restore web.sln
@@ -22,7 +24,7 @@ revision=$(printf "%04d" $revision)
 
 echo "PACKING WEB PROJECT"
 
-dotnet pack ./web/web.csproj -c Release -o ./artifacts --version-suffix=$revision 
+dotnet pack ./web/web.csproj -c Release -o $artifactsfolder --version-suffix=$revision 
 
 echo "SCRIPT EXECUTION DONE"
 
