@@ -1,5 +1,9 @@
 language: csharp
 mono: none
 dotnet: 2.0.0
+
+before_install:
+  - chmod +x build/travis.sh
+
 script:
   - build/travis.sh
