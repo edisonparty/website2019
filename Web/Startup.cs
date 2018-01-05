@@ -8,7 +8,13 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace web
+using Microsoft.Azure; // Namespace for CloudConfigurationManager
+using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
+using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
+
+using Web.Repositories;
+
+namespace Web
 {
     public class Startup
     {
@@ -23,6 +29,18 @@ namespace web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+
+            var connectionString = Configuration.GetValue<string>("Tablestorage");
+
+            // Parse the connection string and return a reference to the storage account.
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
+                //CloudConfigurationManager.GetSetting());
+            // Create the table client.
+
+            services.AddSingleton<IParticipantRepository>( new ParticipantRepository(storageAccount) );
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
