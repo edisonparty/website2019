@@ -13,6 +13,7 @@ namespace Web.Controllers
     [Route("api/Participant")]
     public class ParticipantController : Controller
     {
+        const string partitionKey = "edisonparty2018";
         IParticipantRepository participantRepository { get; set; }
         public ParticipantController(IParticipantRepository participantRepository)
         {
@@ -24,8 +25,6 @@ namespace Web.Controllers
         [ProducesResponseType(typeof(IEnumerable<Participant>), 200)]
         public IActionResult GetParticipants()
         {
-            var partitionKey = "2018";
-
             var participants = participantRepository.GetParticipants(partitionKey);
             return Ok(participants);
         }
@@ -35,8 +34,11 @@ namespace Web.Controllers
         public IActionResult AddParticipant([FromBody]Participant participant)
         {
             participant.RowKey = Guid.NewGuid().ToString();
-            participant.PartitionKey = "2018";
+            participant.PartitionKey = partitionKey;
             participant.Registered = DateTime.UtcNow;
+
+            if (participantRepository.GetParticipants(partitionKey).Any(p => p.Email == participant.Email))
+                return new StatusCodeResult(StatusCodes.Status409Conflict);
 
             participantRepository.AddParticipant(participant);
             return Created($"/api/Participant/{participant.RowKey}",participant);

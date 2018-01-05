@@ -35,11 +35,13 @@ namespace Web
 
             // Parse the connection string and return a reference to the storage account.
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
-                //CloudConfigurationManager.GetSetting());
+            //CloudConfigurationManager.GetSetting());
             // Create the table client.
 
-            services.AddSingleton<IParticipantRepository>( new ParticipantRepository(storageAccount) );
+            var slackToken = Configuration.GetValue<string>("SlackToken");
 
+            services.AddSingleton<IParticipantRepository>(new ParticipantRepository(storageAccount));
+            services.AddSingleton<ISlackInviteRepository>(new SlackInviteRepository(slackToken));
 
         }
 
