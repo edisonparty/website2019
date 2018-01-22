@@ -1,0 +1,13 @@
+<div *ngIf="id">
+    <h2>Title</h2>
+    <div>{{id}}</div>
+</div>
+<div *ngIf="!id">
+    <h2>Tales from the scene</h2>
+    <div *ngFor="let s of stories">
+        <h2>{{s.title}}</h2>
+        <div>
+           <span [outerHTML]="s.body | showdown " ></span>
+        </div>
+    </div>
+</div>

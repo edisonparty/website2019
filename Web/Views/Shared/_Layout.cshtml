@@ -1,16 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - web</title>
-    <base href="~/" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico">
+
+    <title>@ViewData["Title"] - web</title>
+
+    @*FACEBOOK META*@
+    <meta property="og:url" content="https://edisonparty.com" />
+    <meta property="og:title" content="Edison 2018 | 20-22 July" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:secure_url" content="https://edisonparty.com/content/logo-edison.png" />
+    <meta property="og:image:url" content="http://edisonparty.com/img/logo-edison.png" />
+    <meta property="og:image:width" content="187" />
+    <meta property="og:image:height" content="50" />
+
+
+    <base href="~/" />
     <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/content/site-styles.css" asp-append-version="true" />
 </head>
 <body>
     @RenderBody()
-
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -4,31 +4,38 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { ShowdownModule } from 'ngx-showdown';
+
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
 
+import { ParticipantComponent } from './components/participant/participant.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { StoryComponent } from './components/story/story.component';
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        ParticipantComponent,
+        RegistrationComponent,
+        StoryComponent
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
+        ShowdownModule,
         RouterModule.forRoot([
-           // { path: '', redirectTo: 'home', pathMatch: 'full' },
+            // { path: '', redirectTo: 'home', pathMatch: 'full' },
 
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'participant', component: ParticipantComponent },
+            { path: 'registration', component: RegistrationComponent },
+            { path: 'stories', component: StoryComponent },
+            { path: 'stories/:id', component: StoryComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

@@ -17,18 +17,26 @@ namespace Web.Models
             RowKey = id;
             PartitionKey = partition;
         }
+
         [JsonProperty]
         public string Email { get; set; }
+
         [JsonProperty]
         public string Handle { get; set; }
 
         [JsonProperty]
         public string Group { get; set; }
+
         [JsonProperty]
+        public string Country { get; set; }
+
+        // [JsonProperty]
         public bool IsOrga { get; set; }
-        [JsonProperty]
+
+        // [JsonProperty]
         public DateTime Registered { get; set; }
-        [JsonProperty]
+
+        // [JsonProperty]
         public DateTime? ReservationCanceled { get; set; }
     }
 }

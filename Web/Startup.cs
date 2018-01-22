@@ -40,6 +40,7 @@ namespace Web
 
             var slackToken = Configuration.GetValue<string>("SlackToken");
 
+            services.AddSingleton<IStoryRepository>(new TalesFromTheSceneRepository(storageAccount));
             services.AddSingleton<IParticipantRepository>(new ParticipantRepository(storageAccount));
             services.AddSingleton<ISlackInviteRepository>(new SlackInviteRepository(slackToken));
 

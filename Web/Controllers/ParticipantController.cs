@@ -29,10 +29,16 @@ namespace Web.Controllers
             return Ok(participants);
         }
 
-        [HttpPost("")]
+        [HttpPost("register")]
         [ProducesResponseType(typeof(Participant), 201)]
         public IActionResult AddParticipant([FromBody]Participant participant)
         {
+            if (participant == null)
+                return BadRequest();
+
+            if (participant.Email == null || participant.Handle == null)
+                return BadRequest("email/handle cannot be null");
+
             participant.RowKey = Guid.NewGuid().ToString();
             participant.PartitionKey = partitionKey;
             participant.Registered = DateTime.UtcNow;
@@ -41,7 +47,7 @@ namespace Web.Controllers
                 return new StatusCodeResult(StatusCodes.Status409Conflict);
 
             participantRepository.AddParticipant(participant);
-            return Created($"/api/Participant/{participant.RowKey}",participant);
+            return Created($"/api/Participant/{participant.RowKey}", participant);
         }
     }
 }
