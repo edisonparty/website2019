@@ -10,32 +10,21 @@ import { Story } from '../../../models/story';
     templateUrl: './story-editor.component.html',
     styleUrls: ['./story-editor.component.css']
 })
-export class StoryEditorComponent implements OnInit, OnDestroy {
-    private sub: any;
-    id: string;
+export class StoryEditorComponent implements OnInit {
     story: Story;
-    stories: Array<Story>;
 
     constructor(private http: Http, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute) {
     }
-    ngOnInit() {
-        this.http.get(this.baseUrl + 'api/story').subscribe(
-            result => {
-                this.stories = result.json() as Array<Story>;
-                if (this.id) {
-                    this.story = this.stories.filter((s) => {
-                        return s.title == this.id;
-                    })[0];
-                }
-            }
-            , error => console.error(error));
-        this.sub = this.route.params.subscribe(params => {
-            this.id = params['id'];
-        });
+
+    ngOnInit(): void {
+        this.story = { title: "", body: "", createdDate: new Date(), modifiedDate: new Date() };
     }
 
-    ngOnDestroy() {
-        this.sub.unsubscribe();
+    publish() {
+        // this.http.post(this.baseUrl + 'api/story', this.story).subscribe(
+        //     result => {
+        //         console.log("successfully posted story");
+        //     }, error => console.error(error)
+        // )
     }
-
 }

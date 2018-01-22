@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ParticipantComponent } from './components/participant/participant.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { StoryComponent } from './components/story/story.component';
+import { StoryEditorComponent } from './components/story-editor/story-editor.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -20,7 +22,8 @@ import { StoryComponent } from './components/story/story.component';
         HomeComponent,
         ParticipantComponent,
         RegistrationComponent,
-        StoryComponent
+        StoryComponent,
+        StoryEditorComponent
     ],
     imports: [
         CommonModule,
@@ -35,6 +38,8 @@ import { StoryComponent } from './components/story/story.component';
             { path: 'participant', component: ParticipantComponent },
             { path: 'registration', component: RegistrationComponent },
             { path: 'stories', component: StoryComponent },
+            { path: 'stories/editor', component: StoryEditorComponent },
+            
             { path: 'stories/:id', component: StoryComponent },
             { path: '**', redirectTo: 'home' }
         ])
