@@ -17,7 +17,7 @@ export class StoryEditorComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.story = { title: "", body: "", createdDate: new Date(), modifiedDate: new Date() };
+        this.story = { title: "", markdown: "", rawHtml: "", createdDate: new Date(), modifiedDate: new Date() };
     }
 
     publish() {

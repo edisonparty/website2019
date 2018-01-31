@@ -37,5 +37,4 @@ export class StoryComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.sub.unsubscribe();
     }
-
 }

@@ -8,7 +8,6 @@ import { Registration } from '../../../models/registration';
     styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-
     private registrant: Registration = { email: "", handle: "", group: "", country: "Sweden" }
 
     private submitted: boolean = false;

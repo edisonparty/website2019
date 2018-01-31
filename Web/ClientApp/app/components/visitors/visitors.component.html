@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-xs-12 col-md-10">
+            <div class="row header">
+                <div class="item handle col-xs-4 col-md-3">Handle</div>
+                <div class="item group col-xs-4 col-md-4">Group(s)</div>
+                <div class="item country col-xs-4 col-md-3">Country</div>
+            </div>
+            <div class="row list" *ngFor="let participant of participants">
+                <div class="item handle col-xs-4 col-md-3">{{participant.handle}}</div>
+                <div class="item group col-xs-4 col-md-4">{{participant.group}}&nbsp;</div>
+                <div class="item country col-xs-4 col-md-3">{{participant.country}}</div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

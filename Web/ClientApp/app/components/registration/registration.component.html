@@ -1,33 +1,42 @@
-<div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" required class="form-control" id="email" name="email" [(ngModel)]="registrant.email"  #email="ngModel"/>
-        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-            Email is required
+<div class="registration container-fluid">
+    <div class="row">
+        <div class="col-xs-1 col-sm-0"> </div>
+        <div class="col-xs-10 col-sm-12">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" required class="form-control" id="email" name="email" [(ngModel)]="registrant.email" #email="ngModel"
+                />
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    Email is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="handle">Handle</label>
+                <input type="text" required class="form-control" id="handle" name="handle" [(ngModel)]="registrant.handle" #handle="ngModel"
+                />
+                <div [hidden]="handle.valid || handle.pristine" class="alert alert-danger">
+                    Handle is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="group">Group</label>
+                <input type="text" class="form-control" id="group" name="group" [(ngModel)]="registrant.group" />
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required [(ngModel)]="registrant.country" class="form-control">
+                    <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                </select>
+            </div>
+
+            <button type="submit" [disabled]="submitted" (click)="submit(); " class="btn btn-success">Submit</button>
+
+            <div class="clearfix"></div>
+            <a [routerLink]="['/participant']">Check out who else is going!</a>
         </div>
-
+        <div class="col-xs-1 col-sm-0"> </div>
     </div>
-
-    <div class="form-group">
-        <label for="handle">Handle</label>
-        <input type="text" required class="form-control" id="handle" name="handle" [(ngModel)]="registrant.handle" #handle="ngModel" />
-        <div [hidden]="handle.valid || handle.pristine" class="alert alert-danger">
-            Handle is required
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="group">Group</label>
-        <input type="text" required class="form-control" id="group" name="group" [(ngModel)]="registrant.group" />
-
-    </div>
-
-    <div class="form-group">
-        <label for="country">Country</label>
-        <select id="country" name="country" required [(ngModel)]="registrant.country" class="form-control">
-                <option *ngFor="let country of countries" [value]="country" >{{country}}</option>
-            </select>
-    </div>
-
-    <button type="submit" (click)="submit()" class="btn btn-success">Submit</button>
 </div>

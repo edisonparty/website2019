@@ -1,6 +1,7 @@
 export class Story {
     title: string;
-    body: string;
+    markdown: string;
+    rawHtml: string;
     createdDate: Date;
     modifiedDate: Date;
 }

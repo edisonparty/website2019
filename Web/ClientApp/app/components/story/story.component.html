@@ -7,7 +7,7 @@
     <div *ngFor="let s of stories">
         <h2>{{s.title}}</h2>
         <div>
-           <span [outerHTML]="s.body | showdown " ></span>
+           <span [outerHTML]="s.markdown | showdown " ></span>
         </div>
     </div>
 </div>

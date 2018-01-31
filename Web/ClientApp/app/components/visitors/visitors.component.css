@@ -1,0 +1,21 @@
+.item {
+    padding: 4px;
+    text-align: center;
+}
+
+.header {
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.list {
+    background-color: #fafafa;
+}
+
+.list:nth-child(2n+1) {
+    background-color: #fff;
+}
+.group{
+border-left: 1px solid #eee;
+border-right: 1px solid #eee;
+}

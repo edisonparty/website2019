@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <h1 class="section-title pb20">Join our slack</h1>
+        <div class="row ">
+            <div class="align-items-center">
+                <input type="email" required class="form-control" id="email" name="email" [(ngModel)]="participantEmail" #email="ngModel"
+                />
+                <button class="btn btn-success" [disabled]="inviteSent" (click)="sendInvite()">Join now!</button>
+                <div class="error" *ngIf="response && !response.ok">Something went wrong: {{response.error}}</div>
+            </div>
+        </div>
+    </div>
+</div>

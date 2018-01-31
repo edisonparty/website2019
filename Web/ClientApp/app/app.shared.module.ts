@@ -10,7 +10,9 @@ import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 
-import { ParticipantComponent } from './components/participant/participant.component';
+import { VisitorsComponent } from './components/visitors/visitors.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { SlackInviteComponent } from './components/slack-invite/slack-invite.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { StoryComponent } from './components/story/story.component';
 import { StoryEditorComponent } from './components/story-editor/story-editor.component';
@@ -20,10 +22,12 @@ import { StoryEditorComponent } from './components/story-editor/story-editor.com
         AppComponent,
         NavMenuComponent,
         HomeComponent,
-        ParticipantComponent,
+        VisitorsComponent,
         RegistrationComponent,
         StoryComponent,
-        StoryEditorComponent
+        StoryEditorComponent,
+        FeaturesComponent,
+        SlackInviteComponent
     ],
     imports: [
         CommonModule,
@@ -35,7 +39,7 @@ import { StoryEditorComponent } from './components/story-editor/story-editor.com
 
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'participant', component: ParticipantComponent },
+            { path: 'participant', component: VisitorsComponent },
             { path: 'registration', component: RegistrationComponent },
             { path: 'stories', component: StoryComponent },
             { path: 'stories/editor', component: StoryEditorComponent },

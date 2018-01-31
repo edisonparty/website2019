@@ -3,11 +3,11 @@ import { Http } from '@angular/http';
 import { Participant } from '../../../models/participant';
 
 @Component({
-    selector: 'participant',
-    templateUrl: './participant.component.html',
-    styleUrls: ['./participant.component.css']
+    selector: 'visitors',
+    templateUrl: './visitors.component.html',
+    styleUrls: ['./visitors.component.css']
 })
-export class ParticipantComponent {
+export class VisitorsComponent {
 
     private participants: Array<Participant> = [];
 
