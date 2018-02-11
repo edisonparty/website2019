@@ -1,12 +1,21 @@
 <div class="registration container-fluid">
     <div class="row">
-        <div class="col-xs-1 col-sm-0"> </div>
+        <div class="col-xs-10 col-sm-12">
+            <div class="alert alert-danger" role="alert" *ngIf="errors.length > 0">
+                <ul>
+                    <li *ngFor="let error of errors">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <div class="col-xs-10 col-sm-12">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" required class="form-control" id="email" name="email" [(ngModel)]="registrant.email" #email="ngModel"
                 />
-                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                <div *ngIf="!email.valid && email.touched" class="alert alert-danger">
                     Email is required
                 </div>
             </div>
@@ -15,7 +24,7 @@
                 <label for="handle">Handle</label>
                 <input type="text" required class="form-control" id="handle" name="handle" [(ngModel)]="registrant.handle" #handle="ngModel"
                 />
-                <div [hidden]="handle.valid || handle.pristine" class="alert alert-danger">
+                <div *ngIf="!handle.valid && handle.touched" class="alert alert-danger">
                     Handle is required
                 </div>
             </div>
@@ -32,10 +41,14 @@
                 </select>
             </div>
 
-            <button type="submit" [disabled]="submitted" (click)="submit(); " class="btn btn-success">Submit</button>
+            <button type="submit" [disabled]="submitButtonDisabled" (click)="submit();" class="btn btn-success">Submit</button>
+            
+            <div class="alert alert-success" role="alert" *ngIf="registrationSuccessful">
+                Registration successful!
+                <div class="clearfix"></div>
+                <a [routerLink]="['/participant']">Check out who else is going!</a>
+            </div>
 
-            <div class="clearfix"></div>
-            <a [routerLink]="['/participant']">Check out who else is going!</a>
         </div>
         <div class="col-xs-1 col-sm-0"> </div>
     </div>

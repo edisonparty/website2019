@@ -1,8 +1,8 @@
 using System;
-
-using Microsoft.Azure; // Namespace for CloudConfigurationManager
-using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
-using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Azure;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
 
 namespace Web.Models
@@ -10,7 +10,6 @@ namespace Web.Models
     [JsonObject(MemberSerialization.OptIn)]
     public class Participant : TableEntity
     {
-
         public Participant() { }
         public Participant(string id, string partition)
         {
@@ -19,9 +18,11 @@ namespace Web.Models
         }
 
         [JsonProperty]
+        [EmailAddress]
         public string Email { get; set; }
 
         [JsonProperty]
+        [Required]
         public string Handle { get; set; }
 
         [JsonProperty]

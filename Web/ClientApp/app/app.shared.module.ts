@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { VisitorsComponent } from './components/visitors/visitors.component';
 import { FeaturesComponent } from './components/features/features.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { SlackInviteComponent } from './components/slack-invite/slack-invite.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { StoryComponent } from './components/story/story.component';
@@ -27,6 +28,7 @@ import { StoryEditorComponent } from './components/story-editor/story-editor.com
         StoryComponent,
         StoryEditorComponent,
         FeaturesComponent,
+        FooterComponent,
         SlackInviteComponent
     ],
     imports: [

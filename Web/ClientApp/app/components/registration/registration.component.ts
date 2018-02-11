@@ -1,16 +1,17 @@
-import { Component, Inject, } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Registration } from '../../../models/registration';
 
 @Component({
-    selector: 'registration',
-    templateUrl: './registration.component.html',
-    styleUrls: ['./registration.component.css']
+    selector: "registration",
+    templateUrl: "./registration.component.html",
+    styleUrls: ["./registration.component.css"]
 })
 export class RegistrationComponent {
-    private registrant: Registration = { email: "", handle: "", group: "", country: "Sweden" }
-
-    private submitted: boolean = false;
+    private registrant: Registration = { email: "", handle: "", group: "", country: "Sweden" };
+    private errors: string[] = [];
+    private submitButtonDisabled: boolean = false;
+    private registrationSuccessful: boolean = false;
     private countries: Array<string> = [
         "Argentina", "Australia", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", "Brazil", "Bulgaria", "Canada", "China",
         "Croatia", "Cyprus", "Czech Republic", "Denmark", "Egypt", "Estonia", "European Union (EU)", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland",
@@ -23,11 +24,28 @@ export class RegistrationComponent {
     }
 
     submit() {
-        console.log(this.registrant);
-        this.submitted = true;
-        this.http.post(this.baseUrl + 'api/participant/register', this.registrant).subscribe(
-            result => { console.log("registerd successfully") }
-            , error => console.error(error)
+        this.errors = [];
+        this.submitButtonDisabled = true;
+        this.http.post(this.baseUrl + "api/participant/register", this.registrant).subscribe(
+            // After receiving any result, enable the submit button again
+            result => {
+                this.submitButtonDisabled = false;
+                this.registrationSuccessful = true;
+            },
+            error => {
+                this.submitButtonDisabled = false;
+
+                if (error.status === 400) {
+                    const dictionary = JSON.parse(error.text());
+                    for (let fieldName in dictionary) {
+                        if (dictionary.hasOwnProperty(fieldName)) {
+                            this.errors.push(dictionary[fieldName]);
+                        }
+                    }
+                } else {
+                    this.errors.push("Something went wrong :(");
+                }
+            }
         );
     }
 }
