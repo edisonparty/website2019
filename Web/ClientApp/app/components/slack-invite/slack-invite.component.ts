@@ -8,9 +8,9 @@ import { SlackInviteResponse } from '../../../models/slackInviteResponse';
     styleUrls: ['./slack-invite.component.css']
 })
 export class SlackInviteComponent {
-    private response: SlackInviteResponse;
-    private inviteSent: boolean = false;
-    private participantEmail: string;
+    public response: SlackInviteResponse;
+    public inviteSent: boolean = false;
+    public participantEmail: string;
     constructor(private http: Http, @Inject('BASE_URL') private baseUrl: string) {
     }
 

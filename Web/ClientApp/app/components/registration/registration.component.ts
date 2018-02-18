@@ -8,11 +8,11 @@ import { Registration } from '../../../models/registration';
     styleUrls: ["./registration.component.css"]
 })
 export class RegistrationComponent {
-    private registrant: Registration = { email: "", handle: "", group: "", country: "Sweden" };
-    private errors: string[] = [];
-    private submitButtonDisabled: boolean = false;
-    private registrationSuccessful: boolean = false;
-    private countries: Array<string> = [
+    public registrant: Registration = { email: "", handle: "", group: "", country: "Sweden" };
+    public errors: string[] = [];
+    public submitButtonDisabled: boolean = false;
+    public registrationSuccessful: boolean = false;
+    public countries: Array<string> = [
         "Argentina", "Australia", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", "Brazil", "Bulgaria", "Canada", "China",
         "Croatia", "Cyprus", "Czech Republic", "Denmark", "Egypt", "Estonia", "European Union (EU)", "Finland", "France", "Georgia", "Germany", "Greece", "Hungary", "Iceland",
         "India", "Ireland", "Israel", "Italy", "Japan", "Korea, Republic of", "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Mexico", "Monaco",
