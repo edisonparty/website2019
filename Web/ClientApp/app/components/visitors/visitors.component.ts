@@ -9,7 +9,7 @@ import { Participant } from '../../../models/participant';
 })
 export class VisitorsComponent {
 
-    private participants: Array<Participant> = [];
+    public participants: Array<Participant> = [];
 
     constructor(private http: Http, @Inject('BASE_URL') private baseUrl: string) {
         http.get(baseUrl + 'api/participant').subscribe(result => { 
