@@ -1,16 +1,13 @@
-<div class="container">
     <div class="row">
-        <h1 class="section-title">Socialize on Slack</h1>
-        <div class="descp">
+        <div>
             <p>Enter your e-mail address to get invited to the party Slack where you can
                 chat with organizers and participants before, during and after the event.</p>
         </div>
-        <div class="descp ">
-            <label for="email">Email</label>
+        <div>
+            <label for="email">Email: </label>
             <input type="email" required class="form-control" id="email" name="email" [(ngModel)]="participantEmail" #email="ngModel" />
             <button class="btn btn-success" [disabled]="inviteSent" (click)="sendInvite()">Invite me now!</button>
 
             <div class="error" *ngIf="response && !response.ok">Something went wrong: {{response.error}}</div>
         </div>
     </div>
-</div>

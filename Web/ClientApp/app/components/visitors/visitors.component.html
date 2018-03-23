@@ -1,15 +1,22 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <p>
-            See who else is coming! Please note that you have to be registered here or have bought a pre-sale ticket before the party starts, otherwise we cannot allow you access to the venue due to Swedish law!
-        </p>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p>
+                See who else is coming! Please note that you have to be registered here or have bought a pre-sale ticket before the party starts, otherwise we cannot allow you access to the venue due to Swedish law!
+            </p>
+        </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-10">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row header">
                 <div class="item handle col-xs-4 col-md-3">Handle</div>
                 <div class="item group col-xs-4 col-md-4">Group</div>
                 <div class="item country col-xs-4 col-md-3">Country</div>
+            </div>
+            <div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="!participants">
+                    <h2>Nobody has registered yet, will you be the first?</h2>
+                </div>
             </div>
             <div class="row list" *ngFor="let participant of participants">
                 <div class="item handle col-xs-4 col-md-3">{{participant.handle}}</div>

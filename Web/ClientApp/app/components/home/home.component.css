@@ -23,3 +23,33 @@ div.image {
     background-color: #000;
     color: #FA0;
 }
+
+.party-ticket {
+    background-color: green;
+    color: #FFF;
+}
+
+.party-ticket-tshirt {
+    background-color: cadetblue;
+    color: #FFF;
+}
+
+.party-ticket-sofa {
+    background-color: grey;
+    color: #FFF;
+}
+
+.party-ticket-door {
+    background-color: indianred;
+    color: #FFF;
+}
+
+.party-ticket-supporter {
+    background-color: mediumorchid;
+    color: #FFF;
+}
+
+.party-ticket-sponsor {
+    background-color: purple;
+    color: #FFF;
+}
