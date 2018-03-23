@@ -1,0 +1,25 @@
+.jumbotron {
+    background-color: #222;
+    color: #FA0;
+    margin-bottom: 0;
+}
+
+.jumbotron.crowd-background {
+    background: url('/content/compo-time.jpg') no-repeat center center;
+}
+
+.row {
+    background-color: #FFF;
+    color: #000;
+}
+
+div.image {
+    padding: 0;
+    background-color: #000;
+    color: #FA0;
+}
+
+.darker {
+    background-color: #000;
+    color: #FA0;
+}
