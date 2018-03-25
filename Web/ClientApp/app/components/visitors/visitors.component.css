@@ -17,17 +17,17 @@
 }
 
 .group {
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+    border-left: 1px solid #FA0;
+    border-right: 1px solid #FA0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
     .hidden-md-up {
         display: none;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .hidden-md-down {
         display: none;
     }
