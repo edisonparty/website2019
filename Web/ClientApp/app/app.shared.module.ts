@@ -33,9 +33,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
-            { path: 'visitors', component: VisitorsComponent },
+            { path: '', redirectTo: 'about', pathMatch: 'full' },
+            { path: 'about', component: HomeComponent },
+            { path: 'participants', component: VisitorsComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
