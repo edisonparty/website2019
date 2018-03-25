@@ -1,8 +1,0 @@
-<div *ngIf="story">
-    <div class="editor">
-        <textarea [(ngModel)]="story.markdown" cols="92" rows="15"></textarea>
-    </div>
-    <div class="preview">
-        <span [innerHTML]="story.markdown | showdown "></span>
-    </div>
-</div>

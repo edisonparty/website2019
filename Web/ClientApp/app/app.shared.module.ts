@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,7 +13,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SlackInviteComponent } from './components/slack-invite/slack-invite.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import {CarouselComponent} from './components/carousel/carousel.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
@@ -34,7 +33,7 @@ import {CarouselComponent} from './components/carousel/carousel.component';
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },        
+            { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'visitors', component: VisitorsComponent },
             { path: '**', redirectTo: 'home' }
