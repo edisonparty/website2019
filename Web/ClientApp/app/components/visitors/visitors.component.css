@@ -9,13 +9,26 @@
 }
 
 .list {
-    background-color: #fafafa;
+    background-color: #222;
 }
 
 .list:nth-child(2n+1) {
-    background-color: #fff;
+    background-color: #000;
 }
-.group{
-border-left: 1px solid #eee;
-border-right: 1px solid #eee;
+
+.group {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+@media (min-width: 768px) {
+    .hidden-md-up {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hidden-md-down {
+        display: none;
+    }
 }

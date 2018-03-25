@@ -1,28 +1,37 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2>Visitors</h2>
             <p>
-                See who else is coming! Please note that you have to be registered here or have bought a pre-sale ticket before the party starts, otherwise we cannot allow you access to the venue due to Swedish law!
+                See who else is coming! Please note that you have to be registered here or have bought a pre-sale ticket before the party
+                starts, otherwise we cannot allow you access to the venue due to Swedish law!
             </p>
         </div>
     </div>
+    <div class="hidden-md-up">
+        <registration></registration>
+    </div>
+
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row header">
                 <div class="item handle col-xs-4 col-md-3">Handle</div>
                 <div class="item group col-xs-4 col-md-4">Group</div>
                 <div class="item country col-xs-4 col-md-3">Country</div>
             </div>
-            <div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" [hidden]="!participants">
+            <div *ngIf="!participants">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <h2>Nobody has registered yet, will you be the first?</h2>
                 </div>
             </div>
             <div class="row list" *ngFor="let participant of participants">
-                <div class="item handle col-xs-4 col-md-3">{{participant.handle}}</div>
-                <div class="item group col-xs-4 col-md-4">{{participant.group}}</div>
-                <div class="item country col-xs-4 col-md-3">{{participant.country}}</div>
+                <div class="item handle col-xs-4 col-md-3">{{participant.handle}} &nbsp; </div>
+                <div class="item group col-xs-4 col-md-4">{{participant.group}} &nbsp; </div>
+                <div class="item country col-xs-4 col-md-3">{{participant.country}} &nbsp; </div>
             </div>
+        </div>
+        <div class="hidden-md-down col-lg-6 col-md-6">
+            <registration></registration>
         </div>
     </div>
 </div>
