@@ -24,6 +24,14 @@ div.image {
     color: #FA0;
 }
 
+.ticket-table {
+    padding: 10px 20px 10px 20px;
+}
+
+.ticket-table .table-bordered>tbody>tr>td, .ticket-table .table-bordered>tbody>tr>th, .ticket-table .table-bordered>tfoot>tr>td, .ticket-table .table-bordered>tfoot>tr>th, .ticket-table .table-bordered>thead>tr>td, .ticket-table .table-bordered>thead>tr>th, .ticket-table table {
+    border-color: #FA0;
+}
+
 .party-ticket {
     background-color: green;
     color: #FFF;
@@ -52,4 +60,40 @@ div.image {
 .party-ticket-sponsor {
     background-color: purple;
     color: #FFF;
+}
+
+.brand-area .container {
+    background: rgba(0, 0, 0, 0) url("/content/special-bg.jpg") no-repeat scroll 0 0 / cover;
+    padding: 20px 0;
+}
+
+.brand-area .row {
+    background-color: inherit;
+}
+
+.total-brand {
+    width: 100%;
+}
+
+.single-brand {
+    height: 100px;
+    white-space: nowrap;
+    
+    text-align: center; 
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.single-brand>img {
+    padding: 0 10px;
+    max-height: 100px;
+    max-width: 200px;
+}
+
+#googleMap {
+    height: 300px;
 }

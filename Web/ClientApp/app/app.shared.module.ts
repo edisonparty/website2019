@@ -15,7 +15,6 @@ import { SlackInviteComponent } from './components/slack-invite/slack-invite.com
 import { RegistrationComponent } from './components/registration/registration.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
-
 @NgModule({
     declarations: [
         AppComponent,
