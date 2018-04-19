@@ -15,6 +15,8 @@ import { SlackInviteComponent } from './components/slack-invite/slack-invite.com
 import { RegistrationComponent } from './components/registration/registration.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
+import { EventsComponent } from './components/events/events.component'
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -25,7 +27,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         FeaturesComponent,
         FooterComponent,
         SlackInviteComponent,
-        CarouselComponent
+        CarouselComponent,
+        EventsComponent
     ],
     imports: [
         CommonModule,
@@ -35,6 +38,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
             { path: '', redirectTo: 'about', pathMatch: 'full' },
             { path: 'about', component: HomeComponent },
             { path: 'participants', component: VisitorsComponent },
+            { path: 'events', component: EventsComponent },
+            
             { path: '**', redirectTo: 'home' }
         ])
     ]
