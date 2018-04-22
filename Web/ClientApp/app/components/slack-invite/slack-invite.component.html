@@ -9,7 +9,7 @@
                 Email is required
             </div>
         </div>
-        <button class="btn btn-success" [disabled]="inviteSent" (click)="sendInvite()">Invite me to Slack!</button>
+        <button class="btn btn-primary" [disabled]="inviteSent" (click)="sendInvite()">Invite me to Slack!</button>
 
         <div class="alert alert-success" role="alert" *ngIf="response && response.ok">
             Invitation sent, check your email!
