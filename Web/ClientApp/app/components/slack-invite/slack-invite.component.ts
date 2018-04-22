@@ -16,15 +16,15 @@ export class SlackInviteComponent {
 
     sendInvite() {
 
-        this.inviteSent = true;
         if (this.participantEmail)
+            this.inviteSent = true;
             this.http.post(this.baseUrl + 'api/slack/invite', { email: this.participantEmail }).subscribe(
                 result => {
                     this.response = result.json() as SlackInviteResponse;
+                    this.inviteSent = false;
                 },
                 error => {
                     this.inviteSent = false;
-
                     this.response = JSON.parse(error._body) as SlackInviteResponse;
                     console.warn(error)
                 }
