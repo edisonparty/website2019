@@ -1,10 +1,15 @@
 .row {
-    background-color: #FFF;
-    color: #000;
+    background-color: white;
+    color: black;
 }
 
 div.image {
     padding: 0;
+    background-color: #000;
+    color: #FA0;
+}
+
+.darker {
     background-color: #000;
     color: #FA0;
 }

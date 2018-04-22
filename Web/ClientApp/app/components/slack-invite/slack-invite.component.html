@@ -3,13 +3,13 @@
     <div>
         <div class="form-group">
 
-            <label for="email">Email</label>
+            <label for="email">Slack Email</label>
             <input type="email" required class="form-control" id="email" name="email" [(ngModel)]="participantEmail" #email="ngModel" />
             <div *ngIf="!email.valid && email.touched" class="alert alert-danger">
                 Email is required
             </div>
         </div>
-        <button class="btn btn-success" [disabled]="inviteSent" (click)="sendInvite()">Invite me now!</button>
+        <button class="btn btn-success" [disabled]="inviteSent" (click)="sendInvite()">Invite me to Slack!</button>
 
         <div class="alert alert-success" role="alert" *ngIf="response && response.ok">
             Invitation sent, check your email!
