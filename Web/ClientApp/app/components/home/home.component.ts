@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
     selector: 'home',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
     styleUrls: ['./home.component.css']
 
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+    ngAfterViewInit(): void {
+        window.dispatchEvent(new Event('ngRouteChange'));
+    }
+
+    constructor() {
+
+
+    }
 }

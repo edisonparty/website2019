@@ -1,6 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { Registration } from '../../../models/registration';
+import { Participant } from '../../../models/participant';
 
 @Component({
     selector: "registration",
@@ -8,6 +9,10 @@ import { Registration } from '../../../models/registration';
     styleUrls: ["./registration.component.css"]
 })
 export class RegistrationComponent {
+
+    @Output()
+    public RegistrationSuccess = new EventEmitter();
+
     public registrant: Registration = { email: "", handle: "", group: "", country: "Sweden" };
     public errors: string[] = [];
     public submitButtonDisabled: boolean = false;
@@ -31,6 +36,7 @@ export class RegistrationComponent {
             result => {
                 this.submitButtonDisabled = false;
                 this.registrationSuccessful = true;
+                this.RegistrationSuccess.emit()
             },
             error => {
                 this.submitButtonDisabled = false;
@@ -48,4 +54,5 @@ export class RegistrationComponent {
             }
         );
     }
+    
 }
