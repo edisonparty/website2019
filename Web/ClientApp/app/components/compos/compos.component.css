@@ -1,0 +1,10 @@
+.row {
+    background-color: #FFF;
+    color: #000;
+}
+
+div.image {
+    padding: 0;
+    background-color: #000;
+    color: #FA0;
+}
