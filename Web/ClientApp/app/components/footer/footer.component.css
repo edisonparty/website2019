@@ -1,6 +1,7 @@
 .footer-area {
     background-color: #222;
     color: #9d9d9d;
+    padding-bottom: 20px;
 }
 
 a {
@@ -17,4 +18,34 @@ label {
     font-weight: normal;
     text-decoration: underline;
     margin-bottom: 0;
+}
+
+.brand-area .container {
+    padding: 20px 20px;
+}
+
+.brand-area .row {
+    background-color: inherit;
+}
+
+.total-brand {
+    width: 100%;
+}
+
+.single-brand {
+    height: 100px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.single-brand > img {
+    padding: 0 10px;
+    max-height: 100px;
+    max-width: 200px;
 }
