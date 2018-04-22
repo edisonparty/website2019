@@ -21,8 +21,8 @@ export class SlackInviteComponent {
             this.http.post(this.baseUrl + 'api/slack/invite', { email: this.participantEmail }).subscribe(
                 result => {
                     this.response = result.json() as SlackInviteResponse;
-                }
-                , error => {
+                },
+                error => {
                     this.inviteSent = false;
 
                     this.response = JSON.parse(error._body) as SlackInviteResponse;
