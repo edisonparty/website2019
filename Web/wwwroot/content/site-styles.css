@@ -1,17 +1,17 @@
-﻿body.btn-primary {
+﻿.btn-primary {
     color: #000 !important;
     background-color: #FA0 !important;
     border-color: #FA0 !important;
 }
 
-body.btn-primary:focus,
-body.btn-primary.focus {
+.btn-primary:focus,
+.btn-primary.focus {
     color: #000 !important;
     background-color: #FA0 !important;
     border-color: #FA0 !important;
 }
 
-body.btn-primary:hover {
+.btn-primary:hover {
     color: #000 !important;
     background-color: #FFF !important;
     border-color: #204d74 !important;
