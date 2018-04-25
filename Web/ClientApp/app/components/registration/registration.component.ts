@@ -39,7 +39,7 @@ export class RegistrationComponent {
         this.http.post(this.baseUrl + "api/participant/register", this.registrant).subscribe(
             // After receiving any result, enable the submit button again
             result => {
-                debugger
+                
                 this.submitButtonDisabled = false;
                 this.registrationSuccessful = true;
 
