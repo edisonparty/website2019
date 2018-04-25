@@ -36,6 +36,12 @@ export class RegistrationComponent {
             result => {
                 this.submitButtonDisabled = false;
                 this.registrationSuccessful = true;
+
+                this.registrant.email = "";
+                this.registrant.handle = "";
+                this.registrant.group = "";
+                this.registrant.country = "Sweden";
+
                 this.RegistrationSuccess.emit()
             },
             error => {
