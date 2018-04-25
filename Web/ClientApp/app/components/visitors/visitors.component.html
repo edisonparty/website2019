@@ -19,15 +19,10 @@
                 <div class="item group col-xs-4 col-md-4">Group</div>
                 <div class="item country col-xs-4 col-md-3">Country</div>
             </div>
-            <div *ngIf="!participants">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <h2>Nobody has registered yet, will you be the first?</h2>
-                </div>
-            </div>
             <div class="row list" *ngFor="let participant of participants">
                 <div class="item handle col-xs-4 col-md-3">{{participant.handle}} &nbsp; </div>
                 <div class="item group col-xs-4 col-md-4">{{participant.group}} &nbsp; </div>
-                <div class="item country col-xs-4 col-md-3">{{participant.country}} &nbsp; </div>
+                <div class="item country col-xs-4 col-md-3 text-nowrap">{{participant.country}} &nbsp; </div>
             </div>
         </div>
         <div class="hidden-md-down col-lg-6 col-md-6">

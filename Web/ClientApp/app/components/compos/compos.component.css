@@ -13,3 +13,13 @@ div.image {
     background-color: #000;
     color: #FA0;
 }
+
+a {
+    color: #FA0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
