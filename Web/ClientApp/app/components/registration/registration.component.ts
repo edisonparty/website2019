@@ -32,6 +32,7 @@ export class RegistrationComponent {
     }
 
     submit() {
+
         this.errors = [];
         this.submitButtonDisabled = true;
         this.registrationSuccessful = false;
@@ -48,7 +49,9 @@ export class RegistrationComponent {
                 this.registrant.group = "";
                 this.registrant.country = "Sweden";
 
-                this.registrationform.reset();
+                this.registrationform.form.markAsPristine();
+                this.registrationform.form.markAsUntouched();
+                this.registrationform.form.updateValueAndValidity();
 
                 this.RegistrationSuccess.emit()
 
