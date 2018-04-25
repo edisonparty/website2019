@@ -16,14 +16,3 @@
     background-color: #FFF !important;
     border-color: #204d74 !important;
 }
-
-
-a {
-    color: #FA0;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #FFF;
-    text-decoration: underline;
-}
