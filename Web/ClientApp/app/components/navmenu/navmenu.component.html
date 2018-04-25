@@ -7,26 +7,31 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <!--<a class='navbar-brand' [routerLink]="['/home']">web</a>-->
+            <a class='navbar-brand' [routerLink]="['/about']">Edison 2018</a>
         </div>
-        <div class='clearfix'></div>
+        <!-- <div class='clearfix'></div> -->
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/home']">
-                        <span class='glyphicon glyphicon-home'></span> Home
-                    </a>
-                </li>
-                <!--<li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/counter']">
-                        <span class='glyphicon glyphicon-education'></span> Counter
+                    <a [routerLink]="['/about']">
+                        <span class='glyphicon glyphicon-home'></span> About
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/fetch-data']">
-                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                    <a [routerLink]="['/participants']">
+                        <span class='glyphicon glyphicon-user'></span> Participants
                     </a>
-                </li>-->
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/compos']">
+                        <span class='glyphicon glyphicon-user'></span> Compos
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/timetable']">
+                        <span class='glyphicon glyphicon-user'></span> Timetable
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

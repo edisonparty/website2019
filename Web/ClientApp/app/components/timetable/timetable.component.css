@@ -1,0 +1,53 @@
+.row {
+    background-color: #FFF;
+    color: #000;
+}
+
+div.image {
+    padding: 0;
+    background-color: #000;
+    color: #FA0;
+}
+
+.darker {
+    background-color: #000;
+    color: #FA0;
+}
+
+.ticket-table {
+    padding: 10px 20px 10px 20px;
+}
+
+    .ticket-table .table-bordered > tbody > tr > td, .ticket-table .table-bordered > tbody > tr > th, .ticket-table .table-bordered > tfoot > tr > td, .ticket-table .table-bordered > tfoot > tr > th, .ticket-table .table-bordered > thead > tr > td, .ticket-table .table-bordered > thead > tr > th, .ticket-table table {
+        border-color: #FA0;
+    }
+
+.party-ticket {
+    background-color: darkcyan;
+    color: #FFF;
+}
+
+.party-ticket-tshirt {
+    background-color: darkolivegreen;
+    color: #FFF;
+}
+
+.party-ticket-sofa {
+    background-color: steelblue;
+    color: #FFF;
+}
+
+.party-ticket-door {
+    background-color: darkslategray;
+    color: #FFF;
+}
+
+.party-ticket-supporter {
+    background-color: darkslateblue;
+    color: #FFF;
+}
+
+.party-ticket-sponsor {
+    background-color: purple;
+    color: #FFF;
+}

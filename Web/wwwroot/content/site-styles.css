@@ -1,0 +1,29 @@
+﻿body.btn-primary {
+    color: #000 !important;
+    background-color: #FA0 !important;
+    border-color: #FA0 !important;
+}
+
+body.btn-primary:focus,
+body.btn-primary.focus {
+    color: #000 !important;
+    background-color: #FA0 !important;
+    border-color: #FA0 !important;
+}
+
+body.btn-primary:hover {
+    color: #000 !important;
+    background-color: #FFF !important;
+    border-color: #204d74 !important;
+}
+
+
+a {
+    color: #FA0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}

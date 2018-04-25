@@ -1,0 +1,25 @@
+.row {
+    background-color: white;
+    color: black;
+}
+
+div.image {
+    padding: 0;
+    background-color: #000;
+    color: #FA0;
+}
+
+.darker {
+    background-color: #000;
+    color: #FA0;
+}
+
+a {
+    color: #FA0;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}

@@ -7,10 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
-using Microsoft.Azure; // Namespace for CloudConfigurationManager
-using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
-using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
+using Microsoft.Azure;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Table;
 
 using Web.Repositories;
 
@@ -30,16 +29,12 @@ namespace Web
         {
             services.AddMvc();
 
-
-            var connectionString = Configuration.GetValue<string>("Tablestorage");
-
             // Parse the connection string and return a reference to the storage account.
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
-            //CloudConfigurationManager.GetSetting());
-            // Create the table client.
+            var connectionString = Configuration.GetValue<string>("TableStorage");
+            var storageAccount = CloudStorageAccount.Parse(connectionString);
 
             var slackToken = Configuration.GetValue<string>("SlackToken");
-
+            
             services.AddSingleton<IParticipantRepository>(new ParticipantRepository(storageAccount));
             services.AddSingleton<ISlackInviteRepository>(new SlackInviteRepository(slackToken));
 
