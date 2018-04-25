@@ -2,6 +2,7 @@
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Web.Models;
@@ -30,10 +31,10 @@ namespace Web.Repositories
 
         public IEnumerable<Participant> GetParticipants(string partitionKey)
         {
-            var query = new TableQuery<Participant>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey));            
+            var query = new TableQuery<Participant>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionKey));
             var participants = ExecuteQueryAsync(ParticipantTable, query).GetAwaiter().GetResult();
 
-            return participants;
+            return participants.OrderBy(p => p.Registered);
         }
 
         private static async Task<IList<T>> ExecuteQueryAsync<T>(CloudTable table, TableQuery<T> query, CancellationToken ct = default(CancellationToken), Action<IList<T>> onProgress = null) where T : ITableEntity, new()
