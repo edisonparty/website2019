@@ -1,7 +1,8 @@
-import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Inject, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Http } from '@angular/http';
 import { Registration } from '../../../models/registration';
 import { Participant } from '../../../models/participant';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: "registration",
@@ -9,6 +10,8 @@ import { Participant } from '../../../models/participant';
     styleUrls: ["./registration.component.css"]
 })
 export class RegistrationComponent {
+    @ViewChild("registrationform")
+    registrationform: NgForm;
 
     @Output()
     public RegistrationSuccess = new EventEmitter();
@@ -31,9 +34,12 @@ export class RegistrationComponent {
     submit() {
         this.errors = [];
         this.submitButtonDisabled = true;
+        this.registrationSuccessful = false;
+
         this.http.post(this.baseUrl + "api/participant/register", this.registrant).subscribe(
             // After receiving any result, enable the submit button again
             result => {
+                debugger
                 this.submitButtonDisabled = false;
                 this.registrationSuccessful = true;
 
@@ -42,7 +48,10 @@ export class RegistrationComponent {
                 this.registrant.group = "";
                 this.registrant.country = "Sweden";
 
+                this.registrationform.reset();
+
                 this.RegistrationSuccess.emit()
+
             },
             error => {
                 this.submitButtonDisabled = false;
@@ -60,5 +69,5 @@ export class RegistrationComponent {
             }
         );
     }
-    
+
 }
