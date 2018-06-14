@@ -28,11 +28,6 @@
                 <option *ngFor="let country of countries" [value]="country">{{country}}</option>
             </select>
         </div>
-        
-        <div class="form-group">
-            <label for="consent">En jävla massa text</label>
-            <input type="checkbox" required class="form-control" id="consent" name="consent" [(ngModel)]="registrant.consent" #email="ngModel" />
-        </div>
 
         <button type="submit" [disabled]="submitButtonDisabled" (click)="submit();" class="btn btn-primary">Register</button>
 
