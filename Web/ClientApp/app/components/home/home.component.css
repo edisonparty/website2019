@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Blackadder ITC';
+    src: url('/content/fonts/blackadder.ttf') format('truetype');
+}
+
 .jumbotron {
     background-color: #222;
     color: #FA0;
@@ -6,6 +11,10 @@
 
 .jumbotron.crowd-background {
     background: url('/content/compo-time.jpg') no-repeat center center;
+}
+
+.jumbotron-subtitle {
+    font-family: 'Blackadder ITC';
 }
 
 .row {
