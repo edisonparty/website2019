@@ -1,0 +1,92 @@
+Uri: https://edisonparty.com/
+File Name: C:\Source\website2018static\edisonparty.com\index.html
+Content Type: text/html
+
+Uri: https://edisonparty.com/content/fonts/blackadder.ttf
+File Name: C:\Source\website2018static\edisonparty.com\content\fonts\blackadder.ttf
+Content Type: application/x-font-ttf
+
+Uri: https://edisonparty.com/content/compo-time.jpg
+File Name: C:\Source\website2018static\edisonparty.com\content\compo-time.jpeg
+Content Type: image/jpeg
+
+Uri: https://edisonparty.com/favicon.ico
+File Name: C:\Source\website2018static\edisonparty.com\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://edisonparty.com/dist/vendor.css?v=vf4TTnOiCp20iU10Tf4anf3dbOl_Mg07hxsMkGL_Rdw
+File Name: C:\Source\website2018static\edisonparty.com\dist\vendor.css
+Content Type: text/css
+
+Uri: https://edisonparty.com/content/site-styles.css?v=I2mazVl_uLzxDQUEuk5Y5E0r5QrTcUYCtTmiOdJS1ZU
+File Name: C:\Source\website2018static\edisonparty.com\content\site-styles.css
+Content Type: text/css
+
+Uri: https://edisonparty.com/about
+File Name: C:\Source\website2018static\edisonparty.com\about.html
+Content Type: text/html
+
+Uri: https://edisonparty.com/participants
+File Name: C:\Source\website2018static\edisonparty.com\participants.html
+Content Type: text/html
+
+Uri: https://edisonparty.com/compos
+File Name: C:\Source\website2018static\edisonparty.com\compos.html
+Content Type: text/html
+
+Uri: https://edisonparty.com/timetable
+File Name: C:\Source\website2018static\edisonparty.com\timetable.html
+Content Type: text/html
+
+Uri: https://edisonparty.com/content/glow-logo.png
+File Name: C:\Source\website2018static\edisonparty.com\content\glow-logo.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/prize-giving.jpg
+File Name: C:\Source\website2018static\edisonparty.com\content\prize-giving.jpeg
+Content Type: image/jpeg
+
+Uri: https://edisonparty.com/content/eggeby.jpg
+File Name: C:\Source\website2018static\edisonparty.com\content\eggeby.jpeg
+Content Type: image/jpeg
+
+Uri: https://edisonparty.com/content/sponsors/arrowhead-logo-horiz-white-200x25.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\arrowhead-logo-horiz-white-200x25.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/scenesat_white_small.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\scenesat_white_small.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/syntax_white_small.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\syntax_white_small.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/flowersfx_white_small.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\flowersfx_white_small.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/showfabriken_logo_white.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\showfabriken_logo_white.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/f-secure-white-small.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\f-secure-white-small.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/sec-t-white-small.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\sec-t-white-small.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/content/sponsors/bontouch-white-small.png
+File Name: C:\Source\website2018static\edisonparty.com\content\sponsors\bontouch-white-small.png
+Content Type: image/png
+
+Uri: https://edisonparty.com/dist/vendor.js?v=2nyaeqxlxCvdBQpR1xFKluQoucQwOwOhWD28JU3Os_g
+File Name: C:\Source\website2018static\edisonparty.com\dist\vendor.js
+Content Type: application/javascript
+
+Uri: https://edisonparty.com/dist/main-client.js?v=UaqckaFQ2_SXBYzpMfjDuji1J6T8xGtrbw2A0DgybHM
+File Name: C:\Source\website2018static\edisonparty.com\dist\main-client.js
+Content Type: application/javascript
+
