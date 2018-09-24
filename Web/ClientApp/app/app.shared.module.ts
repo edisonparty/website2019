@@ -40,7 +40,6 @@ import { ComposComponent } from './components/compos/compos.component'
             { path: 'participants', component: VisitorsComponent },
             { path: 'compos', component: ComposComponent },
             { path: 'timetable', component: TimetableComponent },
-            
             { path: '**', redirectTo: 'home' }
         ])
     ]
