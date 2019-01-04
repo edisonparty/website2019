@@ -1,11 +1,14 @@
+@using Web.Models
+@model IEnumerable<Web.Models.Participant>
 @{
-    ViewData["Title"] = "Edison 2019";
+	ViewBag.Title = "Index";
 }
 
-<app asp-prerender-module="ClientApp/dist/main-server">Pre-calculating...</app>
-
-<script src="~/dist/vendor.js" asp-append-version="true"></script>
-
-@section scripts {
-    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+@section Visitors {
+	@{ string VisitorsData = ""; }
+	@foreach (var visitor in Model) {
+		<div>
+			@Html.DisplayFor(model => visitor.Handle)
+		</div>
+	}
 }

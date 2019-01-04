@@ -1,323 +1,114 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico">
+	<head>
+		<title>Edison 2019 - Arx Proelio</title>
+		<meta charset="UTF-8">
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link href="content/style.css" rel="stylesheet">
+    	<link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico">
+		<meta property="og:url" content="https://edisonparty.com" />
+		<meta property="og:title" content="Edison 2018 | July 20th to 22nd - Stockholm, Sweden" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image" content="https://edisonparty.com/content/facebook-image.jpg" />
+		<meta property="og:image:url" content="https://edisonparty.com/content/facebook-image.jpg" />
+		<meta property="og:image:width" content="187" />
+		<meta property="og:image:height" content="50" />
+	</head>
+	<body>
+		<div class="menu">
+			<ul>
+				<li><a href="#about">ABOUT</a></li>
+				<li><a href="#visitors">VISITORS</a></li>
+				<li><a href="#compos">COMPOS</a></li>
+				<li><a href="#timetable">TIMETABLE</a></li>
+				<li><a href="#crew">CREW</a></li>
+			</ul>
+		</div>
+		<div class="page" id="visitors">
+			<div class="content">
+				<div class="wideblurb">
+					<h1>VISITORS</h1>
 
-    <title>@ViewData["Title"] | July 5th to 7th - Stockholm, Sweden </title>
-
-    @*FACEBOOK META*@
-    <meta property="og:url" content="https://edisonparty.com" />
-    <meta property="og:title" content="Edison 2018 | July 20th to 22nd - Stockholm, Sweden" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image" content="https://edisonparty.com/content/facebook-image.jpg" />
-    <meta property="og:image:url" content="https://edisonparty.com/content/facebook-image.jpg" />
-    <meta property="og:image:width" content="187" />
-    <meta property="og:image:height" content="50" />
-
-    <base href="~/" />
-    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/content/site-styles.css" asp-append-version="true" />
-</head>
-<body>
-    @RenderBody()
-    @RenderSection("scripts", required: false)
-
-
-
-
-<!-- Google Map js -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfShLzyEL5wAwSm229Ypc27sSN2lu7xQA"></script>
-<script>
-    /*-------------------------------------------------------------
-07. Google Map js
----------------------------------------------------------------*/
-
-    function initialize() {
-        var mapOptions = {
-            zoom: 10,
-            styles: [
-                { elementType: 'geometry', stylers: [{ color: '#222222' }] },
-                { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-                { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
-                {
-                    featureType: 'administrative.locality',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#FFAA00' }]
-                },
-                {
-                    featureType: 'poi',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#d59563' }]
-                },
-                {
-                    featureType: 'poi.park',
-                    elementType: 'geometry',
-                    stylers: [{ color: '#263c3f' }]
-                },
-                {
-                    featureType: 'poi.park',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#6b9a76' }]
-                },
-                {
-                    featureType: 'road',
-                    elementType: 'geometry',
-                    stylers: [{ color: '#38414e' }]
-                },
-                {
-                    featureType: 'road',
-                    elementType: 'geometry.stroke',
-                    stylers: [{ color: '#212a37' }]
-                },
-                {
-                    featureType: 'road',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#9ca5b3' }]
-                },
-                {
-                    featureType: 'road.highway',
-                    elementType: 'geometry',
-                    stylers: [{ color: '#746855' }]
-                },
-                {
-                    featureType: 'road.highway',
-                    elementType: 'geometry.stroke',
-                    stylers: [{ color: '#1f2835' }]
-                },
-                {
-                    featureType: 'road.highway',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#f3d19c' }]
-                },
-                {
-                    featureType: 'transit',
-                    elementType: 'geometry',
-                    stylers: [{ color: '#2f3948' }]
-                },
-                {
-                    featureType: 'transit.station',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#d59563' }]
-                },
-                {
-                    featureType: 'water',
-                    elementType: 'geometry',
-                    stylers: [{ color: '#000000' }]
-                },
-                {
-                    featureType: 'water',
-                    elementType: 'labels.text.fill',
-                    stylers: [{ color: '#515c6d' }]
-                },
-                {
-                    featureType: 'water',
-                    elementType: 'labels.text.stroke',
-                    stylers: [{ color: '#17263c' }]
-                }
-            ],
-            scrollwheel: false,
-            center: new google.maps.LatLng(59.398026, 17.919197, 17),
-        };
-        var map = new google.maps.Map(document.getElementById('googleMap'),
-            mapOptions
-        );
-        var marker = new google.maps.Marker({
-            position: map.getCenter(),
-            animation: google.maps.Animation.BOUNCE,
-            //icon: './content/map-marker.png',
-            map: map
-        });
-
-        map.setOptions({});
-
-        //var styles = [
-        //    {
-        //        "featureType": "water",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#e9e9e9"
-        //            },
-        //            {
-        //                "lightness": 17
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "landscape",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#f5f5f5"
-        //            },
-        //            {
-        //                "lightness": 20
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "road.highway",
-        //        "elementType": "geometry.fill",
-        //        "stylers": [
-        //            {
-        //                "color": "#ffffff"
-        //            },
-        //            {
-        //                "lightness": 17
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "road.highway",
-        //        "elementType": "geometry.stroke",
-        //        "stylers": [
-        //            {
-        //                "color": "#ffffff"
-        //            },
-        //            {
-        //                "lightness": 29
-        //            },
-        //            {
-        //                "weight": 0.2
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "road.arterial",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#ffffff"
-        //            },
-        //            {
-        //                "lightness": 18
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "road.local",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#ffffff"
-        //            },
-        //            {
-        //                "lightness": 16
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "poi",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#f5f5f5"
-        //            },
-        //            {
-        //                "lightness": 21
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "poi.park",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#dedede"
-        //            },
-        //            {
-        //                "lightness": 21
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "elementType": "labels.text.stroke",
-        //        "stylers": [
-        //            {
-        //                "visibility": "on"
-        //            },
-        //            {
-        //                "color": "#ffffff"
-        //            },
-        //            {
-        //                "lightness": 16
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "elementType": "labels.text.fill",
-        //        "stylers": [
-        //            {
-        //                "saturation": 36
-        //            },
-        //            {
-        //                "color": "#333333"
-        //            },
-        //            {
-        //                "lightness": 40
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "elementType": "labels.icon",
-        //        "stylers": [
-        //            {
-        //                "visibility": "off"
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "transit",
-        //        "elementType": "geometry",
-        //        "stylers": [
-        //            {
-        //                "color": "#f2f2f2"
-        //            },
-        //            {
-        //                "lightness": 19
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "administrative",
-        //        "elementType": "geometry.fill",
-        //        "stylers": [
-        //            {
-        //                "color": "#fefefe"
-        //            },
-        //            {
-        //                "lightness": 20
-        //            }
-        //        ]
-        //    },
-        //    {
-        //        "featureType": "administrative",
-        //        "elementType": "geometry.stroke",
-        //        "stylers": [
-        //            {
-        //                "color": "#fefefe"
-        //            },
-        //            {
-        //                "lightness": 17
-        //            },
-        //            {
-        //                "weight": 1.2
-        //            }
-        //        ]
-        //    }
-        //];
-
-        //map.setOptions({ styles: styles });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    google.maps.event.addDomListener(window, 'ngRouteChange', initialize);
-
-
-</script>
-
-</body>
+					@RenderSection("Visitors", required: false)
+				</div>
+				<div class="blurb">
+					<h2>REGISTRATION</h2>
+					<div>inna da nation</div>
+				</div>
+			</div>
+		</div>
+		<div class="page" id="compos">
+			<div class="content">
+				<div class="blurb">
+					<h1>COMPOS</h1>
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+			</div>
+		</div>
+		<div class="page" id="timetable">
+			<div class="content">
+				<div class="wideblurb">
+					<h1>TIMETABLE</h1>
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+			</div>
+		</div>
+		<div class="page" id="crew">
+			<div class="content">
+				<div class="blurb">
+					<h1>CREW</h1>
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+			</div>
+		</div>
+		<!-- Default page is the last one due to sibling selector rules. -->
+		<div class="page" id="about">
+			<div class="top">
+				<div class="banner">
+					<h1>Edison 2019</h1>
+				</div>
+			</div>
+			<div class="content">
+				@RenderBody()
+				<div class="blurb">
+					<h1>ABOUT</h1>
+				</div>
+				<div class="blurb">
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+				</div>
+				<div class="blurb">
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+				<div class="blurb">
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+				</div>
+				<div class="blurb">
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+				<div class="blurb">
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+				</div>
+				<div class="blurb">
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+				<div class="blurb">
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+					<h2>ARX · PROELIO</h2>
+				</div>
+				<div class="blurb">
+					<div>Lorem ipsum, dolor sit amet.</div>
+				</div>
+			</div>
+		</div>
+		@RenderSection("scripts", required: false)
+	</body>
 </html>
+
