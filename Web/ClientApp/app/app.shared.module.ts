@@ -35,7 +35,7 @@ import { ComposComponent } from './components/compos/compos.component'
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'about', pathMatch: 'full' },
+            { path: '', redirectTo: 'about#about', pathMatch: 'full' },
             { path: 'about', component: HomeComponent },
             { path: 'participants', component: VisitorsComponent },
             { path: 'compos', component: ComposComponent },

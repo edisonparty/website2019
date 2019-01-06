@@ -12,7 +12,7 @@ namespace Web.Controllers
     [Route("api/Participant")]
     public class ParticipantApiController : Controller
     {
-        private const string partitionKey = "edisonparty2018";
+        private const string partitionKey = "edisonparty2019";
         IParticipantRepository participantRepository { get; }
 
         public ParticipantApiController(IParticipantRepository participantRepository)

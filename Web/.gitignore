@@ -235,3 +235,13 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# Vim poop
+*~
+.*.swp
+.*.swo
+
+# Azurite
+__azurite_db_blob__.json
+__azurite_db_table__.json
+

@@ -1,0 +1,271 @@
+@font-face {
+	font-family: CenturySchoolbook;
+	src: url(fonts/CenturySchL-Roma.ttf);
+}
+
+html {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-flow: column;
+	align-content: stretch;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.menu {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 3rem;
+	background: black;
+	text-align: center;
+	box-shadow: 0 0.1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.menu a {
+	color: white;
+	display: block;
+	height: 2rem;
+	padding: 0.5rem 1rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	background: #333;
+}
+
+@media screen and (max-width: 725px) and (hover: none) {
+	.menu::before {
+		content: "≡";
+		font-size: 2rem;
+		font-weight: bold;
+		width: 3rem;
+		color: white;
+		text-align: center;
+		height: 3rem;
+		display: block;
+		background: black;
+	}
+	
+	.menu:active:before {
+		background: #333;
+	}
+
+	.menu:hover ul {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+	.menu {
+		background: black;
+		text-align: left;
+	}
+	
+	.menu ul {
+		position: relative;
+		display: block; 
+		background: black;
+		width: 50vw;
+		box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+		left: 0vw;
+		transition: transform 0.15s, opacity 0.3s;
+		transform: translateX(-105%);
+		opacity: 1;
+	}
+
+	.menu li {
+		display: block;
+	}
+
+	.menu ul:hover {
+		transform: translateX(-105%); 
+		opacity: 0;
+	} 
+
+	.menu:active ul:hover {
+		transform: translateX(-105%); 
+		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 725px) and (hover: hover) {
+	.menu ul {
+		display: table;
+		column-count: 5;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.menu li {
+		display: table-cell;
+	}
+
+	.menu a {
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 0.7rem;
+	}
+}
+
+.page {
+	display: flex;
+	box-sizing: border-box;
+	flex-flow: column;
+	align-items: stretch;
+	background: #1aa48c;
+	padding: 0;
+	margin: 0;
+	color: black;
+	max-width: 100%;
+	height: 100vh;
+	perspective: 1px;
+	perspective-origin: center top;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#about {
+	display: flex;
+}
+
+.page:not(:target) {
+	display: none;
+}
+
+.page:target ~ #about {
+	display: none;
+}
+
+body {
+	height: 100vh;
+	background: white;
+	font-family: CenturySchoolbook;
+}
+
+.top {
+	margin: 0;
+	margin-top: 6rem;
+	padding: 0;
+	width: 100vw;
+	height: calc((100vw / 3) - 3rem);
+	box-shadow: 0 -0.3rem 1rem rgba(0, 0, 0, 0.3) inset;
+	transform-origin: center;
+	transform: translate3d(0, 50%, -1px) scale(2);
+}
+
+.banner {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: calc(100vw / 3);
+}
+
+h2:first-of-type ~ h2 {
+	background: magenta;
+}
+
+.banner h1 {
+	background: url(edison_logo_2019_banner_800-nq8.png);
+	margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+	.top h1 {
+		background: url(edison_logo_2019_banner_1280-nq8.png);
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.top h1 {
+		background: url(edison_logo_2019_banner_1920-nq8.png);
+	}
+}
+
+@media screen and (min-width: 1368px) {
+	.top h1 {
+		background: url(edison_logo_2019_banner_3840-nq8.png);
+	}
+}
+
+.top h1 {
+	width: 100wv;
+	background-repeat: no-repeat;
+	background-size: 100vw calc(100vw / 3);
+	color: transparent;
+	padding: 0;
+	min-height: 100%;
+}
+
+@media screen and (orientation: portrait) {
+	.top {
+		height: calc((150vw / 3) - 3rem);
+	}
+
+	.banner {
+		height: calc(150vw / 3);
+	}
+
+	.top h1 {
+		background-repeat: no-repeat;
+		background-size: 150vw 50vw;
+		background-position: -25vw 0;
+	}
+}
+
+.content {
+	display: flex;
+	width: 100vw;
+	min-height: 100%;
+	border: black solid;
+	border-width: 4pt 0 0 0;
+	background: #1aa48c;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+	transform: translateZ(0);
+}
+
+.blurb {
+	box-sizing: border-box;
+	margin: 1rem;
+	padding: 0.5rem;
+	width: 30rem;
+	max-width: 100%;
+	background: white;
+	border-radius: 4px;
+}
+
+.wideblurb {
+	box-sizing: border-box;
+	margin: 1rem;
+	padding: 0.5rem;
+	width: 60rem;
+	max-width: 100%;
+	background: white;
+	border-radius: 4px;
+}
+
