@@ -7,17 +7,25 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	min-height: 100%;
+	display: flex;
+	align-items: stretch;
 }
 
 body {
 	display: flex;
 	flex-flow: column;
-	align-content: stretch;
+	align-items: stretch;
+	flex-grow: 1;
 	width: 100%;
-	max-width: 100%;
 	overflow-x: hidden;
+	overflow-y: auto;
+	max-width: 100%;
 	margin: 0;
+	margin-top: 3rem;
 	padding: 0;
+	background: black;
+	font-family: CenturySchoolbook;
 }
 
 .menu {
@@ -132,20 +140,13 @@ body {
 }
 
 .page {
-	display: flex;
-	box-sizing: border-box;
-	flex-flow: column;
-	align-items: stretch;
+	flex-grow: 1;
 	background: #1aa48c;
 	padding: 0;
 	margin: 0;
 	color: black;
 	max-width: 100%;
-	height: 100vh;
-	perspective: 1px;
-	perspective-origin: center top;
-	overflow-y: auto;
-	overflow-x: hidden;
+	transform: translateZ(0);
 }
 
 #about {
@@ -156,28 +157,25 @@ body {
 	display: none;
 }
 
-.page:target ~ #about {
+.page:target ~ #about  {
 	display: none;
 }
 
-body {
-	height: 100vh;
-	background: white;
-	font-family: CenturySchoolbook;
+.page:target ~ .top {
+	display: none;
 }
 
 .top {
 	margin: 0;
-	margin-top: 6rem;
 	padding: 0;
 	width: 100vw;
-	height: calc((100vw / 3) - 3rem);
+	height: calc((100vw / 3));
 	box-shadow: 0 -0.3rem 1rem rgba(0, 0, 0, 0.3) inset;
-	transform-origin: center;
-	transform: translate3d(0, 50%, -1px) scale(2);
 }
 
 .banner {
+	position: relative;
+	top: 0;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -212,9 +210,9 @@ h2:first-of-type ~ h2 {
 }
 
 .top h1 {
-	width: 100wv;
+	width: 100%;
 	background-repeat: no-repeat;
-	background-size: 100vw calc(100vw / 3);
+	background-size: 100%;
 	color: transparent;
 	padding: 0;
 	min-height: 100%;
@@ -222,7 +220,7 @@ h2:first-of-type ~ h2 {
 
 @media screen and (orientation: portrait) {
 	.top {
-		height: calc((150vw / 3) - 3rem);
+		height: calc(150vw / 3);
 	}
 
 	.banner {
@@ -231,7 +229,7 @@ h2:first-of-type ~ h2 {
 
 	.top h1 {
 		background-repeat: no-repeat;
-		background-size: 150vw 50vw;
+		background-size: 150% 100%;
 		background-position: -25vw 0;
 	}
 }
@@ -239,14 +237,12 @@ h2:first-of-type ~ h2 {
 .content {
 	display: flex;
 	width: 100vw;
-	min-height: 100%;
 	border: black solid;
 	border-width: 4pt 0 0 0;
 	background: #1aa48c;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: flex-start;
-	transform: translateZ(0);
 }
 
 .blurb {
@@ -267,5 +263,11 @@ h2:first-of-type ~ h2 {
 	max-width: 100%;
 	background: white;
 	border-radius: 4px;
+}
+
+footer {
+	display: block;
+	background: black;
+	color: white;
 }
 
