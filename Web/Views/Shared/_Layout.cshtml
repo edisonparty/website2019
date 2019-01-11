@@ -14,6 +14,16 @@
 		<meta property="og:image:url" content="https://edisonparty.com/content/facebook-image.jpg" />
 		<meta property="og:image:width" content="187" />
 		<meta property="og:image:height" content="50" />
+		<script type="text/javascript">
+			var onScroll = function(evt) {
+				var pos = (window.pageYOffset / 2) + "px";
+				var backElems = document.getElementsByClassName("banner");
+				for (var index = 0; index < backElems.length; ++index) {
+					backElems[index].style.top = pos; 
+				}
+			};
+			window.addEventListener("scroll", onScroll, true);
+		</script>
 	</head>
 	<body>
 		<div class="menu">
@@ -62,13 +72,13 @@
 				</div>
 			</div>
 		</div>
+		<div class="top">
+			<div class="banner">
+				<h1>Edison 2019</h1>
+			</div>
+		</div>
 		<!-- Default page is the last one due to sibling selector rules. -->
 		<div class="page" id="about">
-			<div class="top">
-				<div class="banner">
-					<h1>Edison 2019</h1>
-				</div>
-			</div>
 			<div class="content">
 				@RenderBody()
 				<div class="blurb">
@@ -108,6 +118,9 @@
 				</div>
 			</div>
 		</div>
+		<footer>
+			Footer here
+		</footer>
 		@RenderSection("scripts", required: false)
 	</body>
 </html>
