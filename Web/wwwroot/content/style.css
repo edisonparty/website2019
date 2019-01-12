@@ -37,7 +37,7 @@ body {
 	background: black;
 	text-align: center;
 	box-shadow: 0 0.1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
-	z-index: 1;
+	z-index: 2;
 }
 
 .menu ul {
@@ -141,15 +141,10 @@ body {
 
 .page {
 	flex-grow: 1;
-	background: url(background.jpg) #1aa48c;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-attachment: fixed;
 	padding: 0;
 	margin: 0;
 	color: black;
 	max-width: 100%;
-	transform: translateZ(0);
 }
 
 #about {
@@ -245,6 +240,13 @@ h2:first-of-type ~ h2 {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: flex-start;
+	background-color: #1aa48c;
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-attachment: fixed;
+	background-position: 0 0;
+	z-index: 1;
 }
 
 .blurb {
