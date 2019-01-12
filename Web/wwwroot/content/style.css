@@ -252,6 +252,12 @@ h2:first-of-type ~ h2 {
 	z-index: 1;
 }
 
+@media screen and (orientation: portrait) {
+	.content {
+		background-size: auto 100vh;
+	}
+}
+
 .blurb {
 	box-sizing: border-box;
 	margin: 1rem;
