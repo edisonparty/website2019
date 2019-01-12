@@ -140,6 +140,8 @@ body {
 }
 
 .page {
+	display: flex;
+	align-items: stretch;
 	flex-grow: 1;
 	padding: 0;
 	margin: 0;
@@ -238,6 +240,7 @@ h2:first-of-type ~ h2 {
 	border: black solid;
 	border-width: 4pt 0 0 0;
 	flex-flow: row wrap;
+	flex-grow: 1;
 	justify-content: center;
 	align-items: flex-start;
 	background-color: #1aa48c;
