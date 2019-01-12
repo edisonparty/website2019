@@ -141,6 +141,7 @@ body {
 
 .page {
 	display: flex;
+	flex-flow: column;
 	align-items: stretch;
 	flex-grow: 1;
 	padding: 0;
@@ -161,10 +162,6 @@ body {
 	display: none;
 }
 
-.page:target ~ .top {
-	display: none;
-}
-
 .top {
 	margin: 0;
 	padding: 0;
@@ -180,10 +177,6 @@ body {
 	padding: 0;
 	width: 100%;
 	height: calc(100vw / 3);
-}
-
-h2:first-of-type ~ h2 {
-	background: magenta;
 }
 
 .banner h1 {
@@ -243,12 +236,8 @@ h2:first-of-type ~ h2 {
 	flex-grow: 1;
 	justify-content: center;
 	align-items: flex-start;
-	background-color: #1aa48c;
-	background-image: url(background.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-attachment: fixed;
-	background-position: 0 0;
+	background: #1aa48c url(background.jpg) no-repeat;
+	background-size: 100vw auto;
 	z-index: 1;
 }
 
@@ -264,8 +253,9 @@ h2:first-of-type ~ h2 {
 	padding: 0.5rem;
 	width: 30rem;
 	max-width: 100%;
-	background: white;
+	background: rgba(255, 255, 255, 0.5);
 	border-radius: 4px;
+	text-align: justify;
 }
 
 .wideblurb {
