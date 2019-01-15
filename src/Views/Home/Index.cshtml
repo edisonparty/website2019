@@ -1,0 +1,14 @@
+﻿@using Web.Models
+@model IEnumerable<Web.Models.Participant>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section Visitors {
+	@{ string VisitorsData = ""; }
+	@foreach (var visitor in Model) {
+		<div>
+			@Html.DisplayFor(model => visitor.Handle)
+		</div>
+	}
+}
