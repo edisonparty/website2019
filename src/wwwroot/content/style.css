@@ -212,12 +212,16 @@ body {
 }
 
 @media screen and (orientation: portrait) {
+	:root {
+		--topheight: calc(150vw / 3);
+	}
+
 	.top {
-		height: calc(150vw / 3);
+		height: var(--topheight);
 	}
 
 	.banner {
-		height: calc(150vw / 3);
+		height: var(--topheight);
 	}
 
 	.top h1 {
@@ -228,17 +232,65 @@ body {
 }
 
 .content {
+	--pad-size: calc((100vw - 99rem) / 2);
+	
+	padding-left: var(--pad-size);
+	padding-right: var(--pad-size);
 	display: flex;
-	width: 100vw;
+	max-width: 99rem;
 	border: black solid;
 	border-width: 4pt 0 0 0;
 	flex-flow: row wrap;
 	flex-grow: 1;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: stretch;
 	background: #1aa48c url(background.jpg) no-repeat;
 	background-size: 100vw auto;
 	z-index: 1;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
+}
+
+:root {
+	--iframe-width: 28rem;
+	--iframe-height: 15.75rem;
+}
+
+@media screen and (max-width: 99rem) {
+	.content {
+		--pad-size: calc((100vw - 66rem) / 2);
+		
+		padding-left: var(--pad-size);
+		padding-right: var(--pad-size);
+		max-width: 66rem;
+	}
+
+	.column:nth-of-type(3) {
+		display: contents;
+	}
+}
+
+@media screen and (max-width: 66rem) {
+	:root {
+		--iframe-width: calc(100vw - 4rem);
+		--iframe-height: calc(var(--iframe-width) / (16 / 9));
+	}
+
+	.content {
+		--pad-size: calc((100vw - 33rem) / 2);
+		
+		padding-left: var(--pad-size);
+		padding-right: var(--pad-size);
+		max-width: 33rem;
+	}
+
+	.column {
+		display: contents;
+	}
 }
 
 @media screen and (orientation: portrait) {
@@ -256,22 +308,49 @@ body {
 	border-radius: 4px;
 	background: rgba(255, 255, 255, 0.5);
 	text-align: justify;
+	flex-grow: 1;
 }
 
 .wideblurb {
 	box-sizing: border-box;
 	margin: 1rem;
 	padding: 0.5rem;
-	width: 60rem;
-	max-width: 100%;
+	width: calc(60rem);
 	border-radius: 4px;
 	background: rgba(255, 255, 255, 0.5);
 	text-align: justify;
+	flex-grow: 1;
+}
+
+.fullblurb {
+	box-sizing: border-box;
+	margin: 1rem;
+	padding: 0.5rem;
+	width: 100%;
+	max-width: 94rem;
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 0.5);
+	text-align: justify;
+	flex-grow: 1;
 }
 
 footer {
 	display: block;
 	background: black;
 	color: white;
+}
+
+figure {
+	margin: 16px 0.5rem;
+	padding: 0;
+}
+
+figcaption {
+	font-size: 0.8rem;
+}
+
+iframe {
+	width: var(--iframe-width);
+	height: var(--iframe-height);
 }
 
