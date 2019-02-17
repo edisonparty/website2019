@@ -35,12 +35,18 @@ namespace Web.Controllers
         [ProducesResponseType(typeof(Participant), 201)]
         public IActionResult AddParticipant([FromBody]Participant participant)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
 			try
 			{
-				participant = participantRealizer.RealizeParticipant(participant, ModelState);
+				participantRealizer.RealizeParticipant(participant, participantRepository);
 			}
 			catch (System.InvalidOperationException)
 			{
+				ModelState.AddModelError("Email", "This e-mail address already exists");
                 return BadRequest(ModelState);
 			}
 

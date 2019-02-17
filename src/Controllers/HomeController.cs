@@ -33,12 +33,18 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult Register([FromForm]Participant participant)
 		{
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
 			try
 			{
-				participantRealizer.RealizeParticipant(participant, ModelState);
+				participantRealizer.RealizeParticipant(participant, participantRepository);
 			}
 			catch (System.InvalidOperationException)
 			{
+				ModelState.AddModelError("Email", "This e-mail address already exists");
                 return BadRequest(ModelState);
 			}
 
