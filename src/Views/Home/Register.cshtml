@@ -1,0 +1,9 @@
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+	@Html.TextBox("Handle")
+	@Html.TextBox("Group")
+	@Html.TextBox("Country")
+	@Html.TextBox("Email")
+	<input type="submit">
+}
+

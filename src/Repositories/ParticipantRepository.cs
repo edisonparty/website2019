@@ -48,7 +48,6 @@ namespace Web.Repositories
                 token = seg.ContinuationToken;
                 items.AddRange(seg);
                 onProgress?.Invoke(items);
-
             } while (token != null && !ct.IsCancellationRequested);
 
             return items;

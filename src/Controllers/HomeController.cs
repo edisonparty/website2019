@@ -15,16 +15,35 @@ namespace Web.Controllers
     {
         private const string partitionKey = "edisonparty2019";
 		private IParticipantRepository participantRepository { get; }
+		private IParticipantRealizer participantRealizer { get; }
 
-		public HomeController(IParticipantRepository participantRepository)
+		public HomeController(IParticipantRepository participantRepository, IParticipantRealizer participantRealizer)
 		{
 			this.participantRepository = participantRepository;
+			this.participantRealizer = participantRealizer;
 		}
 
         public IActionResult Index()
         {
-            return View(participantRepository.GetParticipants(partitionKey));
+			var participants = participantRepository.GetParticipants(partitionKey);
+			
+            return View(participants);
         }
+
+        [HttpPost]
+        public IActionResult Register([FromForm]Participant participant)
+		{
+			try
+			{
+				participantRealizer.RealizeParticipant(participant, ModelState);
+			}
+			catch (System.InvalidOperationException)
+			{
+                return BadRequest(ModelState);
+			}
+
+			return Redirect("/#visitors");
+		}
 
         public IActionResult Error()
         {

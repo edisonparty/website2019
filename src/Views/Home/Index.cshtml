@@ -5,10 +5,41 @@
     ViewData["Title"] = "Home Page";
 }
 @section Visitors {
-	@{ string VisitorsData = ""; }
+	<table class="visitors">
+		<tr>
+			<th>#</th>
+			<th>Handle / Group</th>
+			<th>Enclave</th>
+		</tr>
+	@{ int count = 1; }
+	
 	@foreach (var visitor in Model) {
-		<div>
-			@Html.DisplayFor(model => visitor.Handle)
-		</div>
+		<tr>
+			<td>@(count++)</td>
+			<td>
+				@Html.DisplayFor(model => visitor.Handle)
+				@{ 
+					if (visitor.Group != "")
+					{
+						@:/ @Html.DisplayFor(model => visitor.Group)
+					}
+					
+				}
+			</td>
+			<td>
+				@{
+					if (visitor.Country != "")
+					{
+						@Html.DisplayFor(model => visitor.Country)
+					}
+				}
+			</td>
+		</tr>
 	}
+	</table>
 }
+
+@section Registration {
+	@await Html.PartialAsync("~/Views/Home/Register.cshtml", new Web.Models.Participant())
+}
+

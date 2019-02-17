@@ -13,11 +13,13 @@ namespace Web.Controllers
     public class ParticipantApiController : Controller
     {
         private const string partitionKey = "edisonparty2019";
-        IParticipantRepository participantRepository { get; }
+        private IParticipantRepository participantRepository { get; }
+		private IParticipantRealizer participantRealizer { get; }
 
-        public ParticipantApiController(IParticipantRepository participantRepository)
+        public ParticipantApiController(IParticipantRepository participantRepository, IParticipantRealizer participantRealizer)
         {
             this.participantRepository = participantRepository;
+			this.participantRealizer = participantRealizer;
         }
 
         [HttpGet("")]
@@ -33,23 +35,14 @@ namespace Web.Controllers
         [ProducesResponseType(typeof(Participant), 201)]
         public IActionResult AddParticipant([FromBody]Participant participant)
         {
-            if (!ModelState.IsValid)
-            {
+			try
+			{
+				participant = participantRealizer.RealizeParticipant(participant, ModelState);
+			}
+			catch (System.InvalidOperationException)
+			{
                 return BadRequest(ModelState);
-            }
-
-            if (participantRepository.GetParticipants(partitionKey).Any(p => p.Email == participant.Email))
-            {
-                ModelState.AddModelError("Email", "This e-mail address already exists");
-
-                return BadRequest(ModelState);
-            }
-
-            participant.RowKey = Guid.NewGuid().ToString();
-            participant.PartitionKey = partitionKey;
-            participant.Registered = DateTime.UtcNow;
-
-            participantRepository.AddParticipant(participant);
+			}
 
             return Created($"/api/Participant/{participant.RowKey}", participant);
         }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
+using Web.Controllers;
 using Web.Repositories;
 
 namespace web
@@ -38,6 +39,7 @@ namespace web
             
             services.AddSingleton<IParticipantRepository>(new ParticipantRepository(storageAccount));
             services.AddSingleton<ISlackInviteRepository>(new SlackInviteRepository(slackToken));
+            services.AddSingleton<IParticipantRealizer, ParticipantRealizer>();
 
         }
 
