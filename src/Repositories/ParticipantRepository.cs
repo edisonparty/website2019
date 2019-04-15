@@ -7,6 +7,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Web.Models;
 
+using Newtonsoft.Json;
+
 namespace Web.Repositories
 {
     public class ParticipantRepository : IParticipantRepository
@@ -26,7 +28,7 @@ namespace Web.Repositories
         }
 
         public void AddParticipant(Participant participant) {
-            ParticipantTable.ExecuteAsync(TableOperation.Insert(participant)).GetAwaiter().GetResult();
+            ParticipantTable.ExecuteAsync(TableOperation.Insert(participant)).GetAwaiter();//.GetResult();
         }
 
         public IEnumerable<Participant> GetParticipants(string partitionKey)
@@ -42,12 +44,12 @@ namespace Web.Repositories
             var items = new List<T>();
             TableContinuationToken token = null;
 
-			do {
+            do {
                 TableQuerySegment<T> seg = await table.ExecuteQuerySegmentedAsync<T>(query, token);
                 token = seg.ContinuationToken;
                 items.AddRange(seg);
                 onProgress?.Invoke(items);
-			} while (token != null && !ct.IsCancellationRequested);
+            } while (token != null && !ct.IsCancellationRequested);
 
             return items;
         }
