@@ -42,13 +42,13 @@ namespace Web.Repositories
             var items = new List<T>();
             TableContinuationToken token = null;
 
-            do
+            while (token != null && !ct.IsCancellationRequested)
             {
                 TableQuerySegment<T> seg = await table.ExecuteQuerySegmentedAsync<T>(query, token);
                 token = seg.ContinuationToken;
                 items.AddRange(seg);
                 onProgress?.Invoke(items);
-            } while (token != null && !ct.IsCancellationRequested);
+			}
 
             return items;
         }
