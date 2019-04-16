@@ -381,3 +381,8 @@ form div {
 	text-align: right;
 }
 
+#googleMap {
+	color: rgba(0, 0, 0, 0.0);
+	height: 33vw;
+}
+

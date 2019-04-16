@@ -43,3 +43,7 @@
 	@await Html.PartialAsync("~/Views/Home/Register.cshtml", new Web.Models.Participant())
 }
 
+@section scripts {
+	@await Html.PartialAsync("~/Views/Home/Map.cshtml")
+}
+
