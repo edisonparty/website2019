@@ -1,0 +1,11 @@
+@using (Html.BeginForm("SlackInvite", "Home", FormMethod.Post))
+{
+	<div>
+		<label for="Email">Email</label>
+		@Html.TextBox("Email")
+	</div>
+	<div>
+		<input type="submit">
+	</div>
+}
+

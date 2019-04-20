@@ -16,11 +16,13 @@ namespace Web.Controllers
         private const string partitionKey = "edisonparty2019";
 		private IParticipantRepository participantRepository { get; }
 		private IParticipantRealizer participantRealizer { get; }
+        private ISlackInviteRepository slackInviteRepository { get; }
 
-		public HomeController(IParticipantRepository participantRepository, IParticipantRealizer participantRealizer)
+		public HomeController(IParticipantRepository participantRepository, IParticipantRealizer participantRealizer, ISlackInviteRepository slackInviteRepository)
 		{
 			this.participantRepository = participantRepository;
 			this.participantRealizer = participantRealizer;
+            this.slackInviteRepository = slackInviteRepository;
 		}
 
         public IActionResult Index()
@@ -50,6 +52,18 @@ namespace Web.Controllers
 
 			return Redirect("/#visitors");
 		}
+
+        [HttpPost]
+        public IActionResult SlackInvite([FromForm]SlackInviteRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var response = slackInviteRepository.Invite(request);
+            return Redirect("/#visitors");
+        }
 
         public IActionResult Error()
         {

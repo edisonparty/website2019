@@ -32,7 +32,7 @@ namespace Web.Repositories
                 var slackResponse = JsonConvert.DeserializeObject<ExternalSlackResponse>(inviteResult);
                 return slackResponse;
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return new ExternalSlackResponse()
                 {
