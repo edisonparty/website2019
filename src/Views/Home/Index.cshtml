@@ -44,6 +44,9 @@
 	@await Html.PartialAsync("~/Views/Home/Register.cshtml", new Web.Models.Participant())
 }
 
+@section Slack {
+	@await Html.PartialAsync("~/Views/Home/Slack.cshtml", new Web.Models.SlackInviteRequest())
+}
 @section scripts {
 	@await Html.PartialAsync("~/Views/Home/Map.cshtml")
 }
