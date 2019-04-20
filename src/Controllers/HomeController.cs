@@ -62,7 +62,7 @@ namespace Web.Controllers
             }
 
             var response = slackInviteRepository.Invite(request);
-            return Redirect("/#visitors");
+            return Redirect("/#home");
         }
 
         public IActionResult Error()
