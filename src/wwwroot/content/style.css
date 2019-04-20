@@ -330,8 +330,8 @@ input[type=submit]:hover {
 	box-sizing: border-box;
 	margin: 1rem;
 	padding: 0.5rem;
-	width: 30rem;
-	max-width: 100%;
+	width: 100%;
+	max-width: 30rem;
 	border-radius: 4px;
 	background: rgba(255, 255, 255, 0.5);
 	text-align: justify;
@@ -342,7 +342,8 @@ input[type=submit]:hover {
 	box-sizing: border-box;
 	margin: 1rem;
 	padding: 0.5rem;
-	width: calc(60rem);
+	width: 100%;
+	max-width: 60rem;
 	border-radius: 4px;
 	background: rgba(255, 255, 255, 0.5);
 	text-align: justify;
