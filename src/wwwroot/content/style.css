@@ -410,7 +410,11 @@ table {
 table.tickets td {
 	padding: 0.5rem;
 	vertical-align: top;
-	/* text-align: left; */
+}
+
+table.timetable td, table.timetable th {
+	padding: 0.2rem;
+	vertical-align: top;
 }
 
 td.centered {
