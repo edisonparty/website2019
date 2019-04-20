@@ -28,6 +28,11 @@ body {
 	font-family: CenturySchoolbook;
 }
 
+h1, h2 {
+	margin: 0;
+	padding: 0;
+}
+
 a {
 	color: white;
 	text-decoration: none;
@@ -157,7 +162,7 @@ input[type=submit]:hover {
 	}
 }
 
-@media screen and (max-width: 725px) and (hover: hover) {
+@media screen and (max-width: 925px) and (hover: hover) {
 	.menu ul {
 		display: table;
 		column-count: 5;
@@ -330,7 +335,7 @@ input[type=submit]:hover {
 .blurb {
 	box-sizing: border-box;
 	margin: 1rem;
-	padding: 0.5rem;
+	padding: 1.5rem;
 	width: 100%;
 	max-width: 30rem;
 	border-radius: 4px;
@@ -342,7 +347,7 @@ input[type=submit]:hover {
 .wideblurb {
 	box-sizing: border-box;
 	margin: 1rem;
-	padding: 0.5rem;
+	padding: 1.5rem;
 	width: 100%;
 	max-width: 60rem;
 	border-radius: 4px;
@@ -354,7 +359,7 @@ input[type=submit]:hover {
 .fullblurb {
 	box-sizing: border-box;
 	margin: 1rem;
-	padding: 0.5rem;
+	padding: 1.5rem;
 	width: 100%;
 	max-width: 94rem;
 	border-radius: 4px;
@@ -369,7 +374,8 @@ footer {
 	justify-content: center;
 	background: black;
 	color: #8dd1c5;
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
+	padding: 1rem;
 }
 
 footer section {
@@ -380,15 +386,15 @@ footer section {
 	flex-grow: 1;
 }
 
-.getting-there {
+.autoflexer {
 	flex-wrap: wrap;
 	display: flex;
 }
 
-.getting-there section {
+.autoflexer section, .autoflexer table {
 	flex: 1;
 	min-width: 150px;
-	padding: 1rem;
+    padding-right: 1.5em;
 	max-width: 500px;
 	flex-grow: 1;
 }
@@ -426,6 +432,10 @@ table.tickets td {
 	vertical-align: top;
 }
 
+table.timetable {
+	width: auto;
+}
+
 table.timetable td, table.timetable th {
 	padding: 0.2rem;
 	vertical-align: top;
@@ -435,7 +445,7 @@ td.centered {
 	text-align: center;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
 	background: rgba(255, 255, 255, 0.2);
 }
 
