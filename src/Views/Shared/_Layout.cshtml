@@ -30,6 +30,7 @@
 			<ul>
 				<li><a href="#about">ABOUT</a></li>
 				<li><a href="#visitors">VISITORS</a></li>
+				<li><a href="#tickets">TICKETS</a></li>
 				<li><a href="#compos">COMPOS</a></li>
 				<li><a href="#timetable">TIMETABLE</a></li>
 				<li><a href="#crew">CREW</a></li>
@@ -43,7 +44,8 @@
 				</div>
 				<div class="blurb">
 					<h2>REGISTRATION</h2>
-					<p>Note: The e-mail address may be used to contact you
+					<p>Note: The e-mail address is used to identify you
+						on the event guestlist and may be used to contact you
 					if there are any unforeseen events or we need to get in
 					touch with you for some other reason.</p>
 					@RenderSection("Registration", required: false)
@@ -52,6 +54,48 @@
 				</div>
 			</div>
 		</div>
+		<div class="page" id="tickets">
+			<div class="content">
+				<div class="blurb">
+					<h1>TICKETS</h1>
+						<table class="table tickets">
+                        <!-- <tr>
+                            <th>Tickets Online</th>
+                            <th>What you get</th>
+                            <th>Price</th>
+                        </tr> -->
+                        <tr>
+                            <td>Party&nbsp;Ticket</td>
+                            <td>The party ticket just as before! Gain full access to the entire party experience!</td>
+                            <td>350&nbsp;SEK</td>
+                        </tr>
+                        <tr>
+                            <td>Supporter&nbsp;Ticket</td>
+                            <td>If you love what we do and want a twice as expensive ticket and the official party t-shirt! This ticket is only available until 2018-06-20</td>
+                            <td>700&nbsp;SEK</td>
+                        </tr>
+                        <tr>
+                            <td>Sponsor&nbsp;Ticket</td>
+                            <td>The easy way to become a sponsor, simply buy a sponsor ticket after contacting us for a sponsor agreement!</td>
+                            <td>5000&nbsp;SEK</td>
+                        </tr>
+						<tr>
+							<td colspan="3" class="centered">
+								<a href="https://edison.confetti.events/" class="button">Buy tickets now!</a>
+							</td>
+						</tr>					
+                    </table>
+					<h1>DOOR TICKETS</h1>
+						<table class="table tickets">
+                        <tr>
+                            <td>Party&nbsp;Ticket<br>(at&nbsp;the&nbsp;door)</td>
+                            <td>The party ticket payed using credit card at the door! With a slight price adjustment and <a href="#visitors">pre-registration</a> still mandatory.</td>
+                            <td>400&nbsp;SEK</td>
+                        </tr>						
+                    </table>
+				</div>
+			</div>
+		</div>		
 		<div class="page" id="compos">
 			<div class="content">
 				<div class="blurb">
@@ -156,7 +200,39 @@
 			</div>
 		</div>
 		<footer>
-			Footer here
+            <section>
+                <h2>WHERE AND WHEN</h2>
+                <p>July 5th - 7th</p>
+                <p>
+                    Eggeby Gård 1 (Teaterladan)<br />
+                    163 62 SPÅNGA<br />
+                    Sweden
+                </p>
+                <p>
+                    <a href="https://goo.gl/maps/FL9rmcaxKdz">Open location in Google Maps</a>
+                </p>
+            </section>
+            <section>
+                <h2>HOW TO PARTICIPATE</h2>
+                <p>
+                    To participate you must register on this website with a working e-mail address as that will be used to identify you on the venue guestlist.
+					Buying a pre-sale ticket online helps plan for a better party and is cheaper than buying one at the door.
+                </p>
+                <p>
+                    <a hre="#register">Register (required)</a><br />
+					<br>
+                    <!-- <a href="">Pre-purchase tickets online</a><br /> -->
+                    <a href="#compos">Compos</a><br />
+                    <a href="#timetable">Timetable</a><br />
+                </p>
+            </section>		
+            <section>
+                <h2>CONTACT US</h2>
+                <p>For any general questions and for sponsor proposals please send an email to: <a href="mailto:crew@edisonparty.com">crew@edisonparty.com</a></p>
+				<br>
+				<a href="https://www.facebook.com/events/2264120550474232/">Facebook event</a><br />
+				<a href="https://www.facebook.com/Edison-116351705114586/">Facebook page</a><br />
+            </section>				
 		</footer>
 		@RenderSection("scripts", required: false)
 	</body>
