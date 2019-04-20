@@ -364,6 +364,7 @@ input[type=submit]:hover {
 footer {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	background: black;
 	color: #8dd1c5;
 }
