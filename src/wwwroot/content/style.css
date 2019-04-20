@@ -103,7 +103,7 @@ input[type=submit]:hover {
 	background: #333;
 }
 
-@media screen and (max-width: 725px) and (hover: none) {
+@media screen and (max-width: 867px) and (hover: none) {
 	.menu::before {
 		content: "≡";
 		font-size: 2rem;
