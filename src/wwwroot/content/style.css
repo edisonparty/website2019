@@ -386,6 +386,23 @@ footer section {
 	flex-grow: 1;
 }
 
+.sponsors {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background: black;
+	color: #8dd1c5;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	align-items: center;
+}
+
+.sponsors img {
+	display: block;
+	padding: 1rem;
+	width: 200px;
+}
+
 .autoflexer {
 	flex-wrap: wrap;
 	display: flex;
