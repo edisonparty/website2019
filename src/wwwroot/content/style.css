@@ -392,15 +392,16 @@ footer section {
 	justify-content: center;
 	background: black;
 	color: #8dd1c5;
-	margin-bottom: 2rem;
 	padding: 1rem;
 	align-items: center;
 }
 
 .sponsors img {
 	display: block;
-	padding: 1rem;
+	padding: 2rem;
 	width: 200px;
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
 .autoflexer {
